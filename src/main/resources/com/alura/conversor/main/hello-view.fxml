@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="700.0" style="-fx-background-image: url('https://i.ytimg.com/vi/kgVIDotoUKU/maxresdefault.jpg'); -fx-background-size:cover;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.alura.conversor.main.HelloController">
+   <children>
+      <Label layoutX="79.0" layoutY="40.0" prefHeight="33.0" prefWidth="542.0" text="CONVERSOR DE MONEDAS A PESOS COLOMBIANOS" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="132.0" prefHeight="28.0" prefWidth="161.0" text="Nombre de la moneda" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="valorPesos" alignment="CENTER" disable="true" layoutX="515.0" layoutY="134.0" promptText="\$ " />
+      <Label layoutX="21.0" layoutY="221.0" text="Cantidad a convertir" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="404.0" layoutY="137.0" prefHeight="20.0" prefWidth="143.0" text="Valor por und" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Label>
+      <Spinner fx:id="cantidadConvertir" editable="true" layoutX="177.0" layoutY="216.0" prefHeight="26.0" prefWidth="133.0">
+         <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="1000000000" min="0" />
+         </valueFactory>
+      </Spinner>
+      <TextField fx:id="total" layoutX="503.0" layoutY="216.0" prefHeight="26.0" prefWidth="161.0" promptText="Valor total">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label layoutX="446.0" layoutY="221.0" text="Total" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font></Label>
+      <Button fx:id="refrescar" accessibleRoleDescription="Actuliza el precio si hay un cambio en la tasa" layoutX="630.0" layoutY="61.0" mnemonicParsing="false" onAction="#actualizarValor">
+     </Button>
+      <TextField fx:id="nombreMoneda" layoutX="190.0" layoutY="134.0" />
+      <!-- ListView para mostrar las sugerencias de autocompletado -->
+      <ListView fx:id="suggestionsListView" layoutX="179.0" layoutY="32.0" prefHeight="100.0" prefWidth="170.0" />
+      <Button layoutX="335.0" layoutY="217.0" mnemonicParsing="false" onAction="#calcularTotal" text="Totalizar">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+      <!-- Botón para salir -->
+      <Button fx:id="botonSalir" layoutX="328.0" layoutY="287.0" mnemonicParsing="false" onAction="#salir" text="Salir">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font></Button>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</Pane>
